@@ -6,7 +6,8 @@
 
 
 /* The devicetree node identifier for the "app_led(app-led)" alias. */
-#define LED_NODE DT_ALIAS(app_led)
+// #define LED_NODE DT_ALIAS(app_led)
+#define LED_NODE DT_ALIAS(led0)
 
 static const struct gpio_dt_spec led = GPIO_DT_SPEC_GET(LED_NODE, gpios);
 
@@ -23,8 +24,9 @@ int main(void)
     if (gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE) < 0) return 0;
 
     LOG_INF("Hello World !!!");
-
+    
     while (1) {
+        // LOG_INF("Hello World !!!");
 
         if (gpio_pin_toggle_dt(&led) < 0) return 0;
 
