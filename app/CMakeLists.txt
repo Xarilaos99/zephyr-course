@@ -8,8 +8,11 @@ set(DTC_OVERLAY_FILE
 
 # This will allow west to find the board named my_board
 list(APPEND BOARD_ROOT ${CMAKE_CURRENT_SOURCE_DIR})
+# list(APPEND DTS_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/..)
 
 find_package(Zephyr REQUIRED HINTS $ENV{ZEPHYR_BASE})
 project(my_zephyr_app)
 
+
+add_subdirectory(drivers/our_drivers)
 target_sources(app PRIVATE src/main.cpp)
