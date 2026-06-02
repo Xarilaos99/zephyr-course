@@ -1,4 +1,11 @@
 / {
+
+
+    aliases {
+        app-led= &led2;  // as there is no led0 for ek_ra8d1, and the led1 is already in aliases
+	};
+
+
     our_driver0: our_driver {
         compatible = "our,driver";
         status = "okay";
